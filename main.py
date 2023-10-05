@@ -1,6 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from message import Message
 import os
+from sensible_config import HOST, PORT
 
 
 class HomeServerHTTP(BaseHTTPRequestHandler):
@@ -22,9 +23,6 @@ class HomeServerHTTP(BaseHTTPRequestHandler):
 
 
 def main():
-    
-    HOST = "192.168.100.183"
-    PORT = 6666
     
     server = HTTPServer((HOST, PORT), HomeServerHTTP)
     print("Server running...")
